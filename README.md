@@ -32,10 +32,9 @@ Din uppgift är att ta fram en enkel applikation som:
 
 ## Instruktioner
 
-- Du kan uppfylla uppgiften hur du vill; en webapp, ett web-API, en mobilapp,
+- Du kan uppfylla uppgiften hur du vill; en web app, ett web-API, en mobilapp,
   ett library, en CLI-app, eller något annat.
 - Du kan använda vilket programmeringsspråk och ramverk du vill.
-- Börja med att klona det här repot.
 - Din applikation behöver inte klara någon hög last. Fundera ändå på hur du
   skulle kunna anpassa den för att klara mycket högre trafik, exempelvis köras
   vid varje besök på Expressen.se.
@@ -44,8 +43,8 @@ Din uppgift är att ta fram en enkel applikation som:
   avvägningar du gör, och vad du hade inkluderat eller jobbat vidare på
   om du hade fortsatt att utveckla applikationen som en applikation redo att
   driftsätta och vidareutveckla.
-- Din lösning skall lämnas som en eller gärna flera commits till din "fork",
-  tillsammans med en instruktion som beskriver hur man kör applikationen, samt
+- Din lösning skall lämnas in som en eller gärna flera commits tillsammans
+  med en instruktion som beskriver hur en kör applikationen, samt
   en kort beskrivning av vilka avvägningar och avgränsningar du gjort.
 - När du skickat in din lösning, kommer du att få möjlighet att göra en mindre
   förändring i en parprogrammeringsuppgift tillsammans med en kollega.
