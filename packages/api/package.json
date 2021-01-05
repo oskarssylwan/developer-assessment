@@ -2,13 +2,12 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "npx tsc",
     "build:watch": "npx tsc --watch",
-    "start": "nodemon ./build/index.js",
+    "start": "nodemon ./build/server.js",
     "start:dev": "npm run build && npm-run-all --parallel build:watch start"
   },
   "keywords": [],
@@ -26,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.7",
+    "@types/xml2js": "^0.4.7",
     "nodemon": "^2.0.6"
   }
 }
