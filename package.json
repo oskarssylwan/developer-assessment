@@ -1,0 +1,34 @@
+{
+  "name": "developer-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npm run start:api",
+    "start:api": "npm run start:dev --prefix packages/api",
+    "install:packages": "npm run install:api",
+    "install:api": "npm install --prefix packages/api",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.ts'",
+    "lint:fix": "eslint --fix '**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oskarssylwan/developer-assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oskarssylwan/developer-assessment/issues"
+  },
+  "homepage": "https://github.com/oskarssylwan/developer-assessment#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "husky": "^4.3.6"
+  }
+}
