@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm run start:api",
-    "start:api": "npm run start:dev --prefix packages/api",
     "install:packages": "npm run install:api",
     "install:api": "npm install --prefix packages/api",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start:api",
+    "start:api": "npm run start:dev --prefix packages/api",
+    "build": "npm run build:api",
+    "build:api": "npm run build --prefix packages/api",
+    "test": "npm run test:api",
+    "test:api": "npm run test --prefix packages/api",
     "lint": "eslint '**/*.ts'",
     "lint:fix": "eslint --fix '**/*.ts'"
   },
