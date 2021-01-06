@@ -38,5 +38,5 @@ app.get('/news', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`🚀 Server is live on http://localhost:${port} 🔥`)
 })
