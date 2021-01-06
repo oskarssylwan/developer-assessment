@@ -1,2 +1,2 @@
-export * from './interfaces';
-export * from './transformer';
+export * from './interfaces'
+export * from './transformer'

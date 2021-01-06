@@ -8,7 +8,7 @@ describe('uniqueById()', () => {
     })
   })
 
-  describe(`is called with an array`, () => {
+  describe('is called with an array', () => {
 
     it('must not mutate original array', () => {
       const input = [{ id: 'foo', }, { id: 'bar' }]
