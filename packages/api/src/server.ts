@@ -3,13 +3,17 @@ import express from 'express'
 import { feeds } from './feeds.json'
 import { toNewsPosts } from './integrations/generic'
 import { NewsPost } from './news'
-import { uniqueById, take, isString } from './utility'
+import { uniqueById, take, isString, flatMap } from './utility'
 import { newsPostLimit, port } from './config'
 
 const app = express()
 
 app.get('/', (_, res) => {
   res.json({ links: { news: '/news' }})
+})
+
+app.get('/status', (_, res) => {
+  res.json('Server is live 🚀')
 })
 
 app.get('/news', (req, res) => {
@@ -19,24 +23,18 @@ app.get('/news', (req, res) => {
 
   const requests = (feeds || []).map((feed: string) => fetch(feed).then(toNewsPosts))
 
+  const sortByPublicationDate = (posts: NewsPost[]) =>
+    posts.sort((a, b) => +new Date(b.publicationDate) - +new Date(a.publicationDate));
+
   Promise.allSettled(requests)
     .then(results => results.filter(result => result.status === 'fulfilled' ))
-    .then((fulfilledResults: PromiseFulfilledResult<any>[]) => fulfilledResults.map(result => result.value))
-    .then((newsPost: NewsPost[]) => newsPost.flat())
+    .then(flatMap(result => result.value))
     .then(uniqueById)
-    .then()
-    .then((newsPost: NewsPost[]) => {
-      res.json(take(postLimit)(newsPost))
-    })
-    .catch(error => {
-      console.error(error)
-      res.json('ouch!')
-    })
+    .then(sortByPublicationDate)
+    .then(take(postLimit))
+    .then((newsPost: NewsPost[]) => res.json(newsPost))
+    .catch(() => res.status(500).send())
 
-})
-
-app.get('/status', (_, res) => {
-  res.json('Server is live 🚀')
 })
 
 app.listen(port, () => {
