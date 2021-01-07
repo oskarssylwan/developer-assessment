@@ -7,7 +7,7 @@ News aggregator API with Swedish news sources.
 - [Using the API](#using-the-api)
   - [Overview of available routes](#overview-of-available-routes)
 - [Example API response](#example-api-response)
-- [Roadmap](#roadmap)
+- [Roadmap (If I hade more time)](#roadmap)
 - [Known Issues](#known-issues)
 
 ## Getting started with development
@@ -56,7 +56,10 @@ GET /news
 This works at the moment. But when a source is added that do not follow the same structure, developers
 need to have the ability to add custom transformers for a specific source.
 
-- To be able to handle large loads of traffic to the API a cacheing layer in the
+- packages/api/src/news will be renamed packages/api/src/aggregator. Fetch, filter and sorting
+logic will be moved there from the /news route handler.
+
+- To be able to handle large loads of traffic to the API, a caching layer in the
 form of a key value store will be added. The caching layer will only cache the response for a short time, for example a minute.
 
 ## Known Issues
